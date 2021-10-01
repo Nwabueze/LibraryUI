@@ -149,28 +149,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-/*
-const userData = async () => {
-  const d = await axios.get('/data');
-  return d.data;
-}
-*/
 export default function Dashboard({ ...props }) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
-  
   const [usedata, setUserData] = useState({});
-
-  /*
-  useEffect(() => {
-    //const d = axios.get('/data');
-    userData();
-  },[]);
-  */
-
-
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -180,8 +163,6 @@ export default function Dashboard({ ...props }) {
     setOpen(false);
   };
 
-
-  
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -481,7 +462,7 @@ export default function Dashboard({ ...props }) {
         <div className={classes.toolbar} />
         <div style={{"width": "80%","maxWidth":"300px", "padding":"15px", "border":"1px solid gray","marginTop":"50px"}}>
           <Typography variant="body2">
-            Veiw all books you have borrowed so far. Please remember to return the books
+            Veiw all users who have not returned library books, and the books they have.
             </Typography>
             <Button
             fullWidth
@@ -490,7 +471,7 @@ export default function Dashboard({ ...props }) {
             className={classes.submit}
             onClick={ showMyBooks }
           >
-            Add Book
+           View Borrowed books
           </Button>
         </div>
 
